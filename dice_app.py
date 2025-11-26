@@ -6,15 +6,31 @@ import random
 
 def dice_sides():
     """Ask the user for the number of sides on the dice and return it  """
-    sides = int(input("How many sides would you like on your dice? "))
-    return sides
-    
+    while True:
+        user_input = input("How many sides should each die have?")
+        try:
+            sides = int(user_input)
+            if sides < 1:
+                print("Please enter a positive integer for the number of sides.")
+            else:
+                return sides
+        except ValueError:
+            print("Invalid input. Please enter a valid whole number")
+   
 
 
 def dice_number():
     """Ask the user for the number of dice to roll and return it  """
-    number = int(input("How many dice would you like to roll? "))
-    return number   
+    while True:
+        number = (input("How many dice would you like to roll? "))
+        try:
+            number = int(number)
+            if number < 1:
+                print("Please enter a positive integer for the number of dice.")
+            else:
+                return number
+        except ValueError:
+            print("Invalid input. Please enter a valid whole number")  
 
 
 def roll_dice(sides, number):
@@ -58,3 +74,5 @@ while is_rolling:
 
     #ask to roll again
     is_rolling = roll_again()
+
+print("Thank you for using my the Python Dice App. Goodbye!")
