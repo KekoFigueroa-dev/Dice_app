@@ -6,59 +6,6 @@ The Art of Doing Python projects. It simulates rolling any number
 of dice with any number of sides, and includes input validation
 and other small improvements added by me.
 
-High-level behavior:
-- The program welcomes the user and then repeatedly:
-    1. Asks how many sides each die should have.
-    2. Asks how many dice to roll.
-    3. Rolls the requested dice and shows each individual result.
-    4. Sums all dice values and displays the total.
-    5. Asks the user whether they want to roll again.
-- The application continues to run until the user chooses to quit,
-  then prints a goodbye message.
-
-Input validation:
-- For the number of sides and number of dice, the program:
-    - Ensures the user enters a valid whole number.
-    - Rejects zero and negative numbers.
-    - Re-prompts the user until a valid positive integer is provided.
-- This prevents the program from crashing on invalid input and ensures
-  that only sensible values are used for dice rolls.
-
-Functions:
-- dice_sides()
-    Asks the user how many sides each die should have, validates the
-    input, and returns a positive integer representing the number of sides.
-
-- dice_number()
-    Asks the user how many dice to roll, validates the input, and
-    returns a positive integer representing the number of dice.
-
-- roll_dice(sides, number)
-    Uses Python's random module to simulate rolling `number` dice,
-    each with `sides` sides. Prints how many dice were rolled, prints
-    each individual roll, and returns a list containing all dice values.
-
-- sum_dice(dice)
-    Takes a list of dice values, computes the total using sum(), and
-    prints the total roll value. This function does not return anything.
-
-- roll_again()
-    Asks the user if they would like to roll again. Interprets 'y' (case
-    insensitive) as continuing, and any other response as stopping.
-    Returns a Boolean value (True to keep rolling, False to exit).
-
-Main loop:
-- The main part of the script:
-    - Prints a welcome message.
-    - Uses a Boolean flag to control a while loop.
-    - On each loop iteration:
-        * Calls dice_sides() and dice_number() to get user choices.
-        * Calls roll_dice() to perform and display the rolls.
-        * Calls sum_dice() to display the total.
-        * Calls roll_again() to decide whether to continue or exit.
-    - After the user chooses not to roll again, prints a final
-      thank-you and goodbye message.
-
 This version focuses on clear function separation, simple control
 flow, and robust user input handling to make the application easier
 to use and less error-prone.
